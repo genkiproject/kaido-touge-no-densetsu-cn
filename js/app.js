@@ -41,7 +41,7 @@ function ensureWorker(){
  worker.onerror=async()=>{await idle();worker?.terminate();worker=null;feedback('处理进程被浏览器中止。请保持网页在前台；如有临时文件，请先使用下方入口清理。',true);update();};return worker;
 }
 start.addEventListener('click',async()=>{
- if(!input||busy||waitingSave)return;pendingName=pendingName||readPending();if(pendingName){feedback('请先清理上次任务的临时文件，再开始新任务。',true);return;}let outputHandle;
+ if(!input||busy||waitingSave)return;pendingName=pendingName||readPending();if(pendingName){update();feedback('请先关闭其他补丁页面，确认下载完成后清理临时文件，再开始新任务。',true);return;}let outputHandle;
  // Show picker in the original user gesture, before network or long hashing.
  if(direct){try{outputHandle=await window.showSaveFilePicker({suggestedName:'Kaidou-CHS-1.4.1.iso',types:[{description:'PlayStation 2 镜像',accept:{'application/octet-stream':['.iso']}}]});const chosen=await outputHandle.getFile();if(chosen.size>0){feedback('该输出文件已存在。请选择新的文件名，避免覆盖原版或已有镜像。',true);return;}}catch(error){if(error.name!=='AbortError')feedback('无法选择输出位置。请在浏览器中允许保存文件，或换用新版 Chrome。',true);return;}}
  busy=true;shownPercent=0;started=performance.now();$('progress-box').hidden=false;$('progress').value=0;$('percent').textContent='0%';feedback('正在本地处理，请保持页面打开。');step(2);update();keepAwake();
