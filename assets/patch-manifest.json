@@ -1,0 +1,32 @@
+{
+  "format": 1,
+  "codec": "zlib-copy-literal-zero-v1",
+  "title": "KAIDO 峠の伝説 汉化优化补丁",
+  "version": "2026.10.22-grip-balance-v1",
+  "input": {
+    "size": 4621631488,
+    "sha256": "db026968bfc55da9730a1e179f89ecda75a23b12c040a6f6dc1375381b1e4115",
+    "game_id": "SLPM-66022",
+    "region": "Japan"
+  },
+  "output": {
+    "size": 4636448768,
+    "sha256": "2b9b47c2b97229b0556f7b0cac22c678d9aa3a5b48df452ef22102d0cf3ae8b9"
+  },
+  "payload_size": 10051979,
+  "payload_sha256": "9fb33e2b6cb96fd607035cf22613e6e7b0e7012cd148ce59f401ece2cbd6da95",
+  "operations": {
+    "C": 245,
+    "L": 263,
+    "Z": 17
+  },
+  "operation_bytes": {
+    "C": 4624652178,
+    "L": 11332736,
+    "Z": 463854
+  },
+  "contains_full_iso": false,
+  "requires_original_iso": true,
+  "patch_size": 10052639,
+  "patch_sha256": "21890c86ccdbbfdc3e686ce5e4988314b4d83407c425e178b1bb37edc4c4791a"
+}

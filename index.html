@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#172323">
+  <meta name="description" content="KAIDO 峠の伝説汉化优化版1.4.1。手机与电脑浏览器本地为日版ISO打补丁，原版文件不上传。">
+  <title>KAIDO 峠の伝説 · 汉化优化补丁</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="site-header wrap">
+    <a class="brand" href="#" aria-label="KAIDO 首页"><span class="brand-mark">峠</span><span>KAIDO<small>汉化优化计划</small></span></a>
+    <nav aria-label="主导航"><a href="#patcher">打补丁</a><a href="#release">版本内容</a><a href="#help">使用帮助</a><a href="https://github.com/genkiproject/kaido-touge-no-densetsu-cn" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="intro">
+        <div class="eyebrow"><span class="live-dot"></span> 简体中文 · 汉化与操控优化</div>
+        <p class="game-name">KAIDO <span>— 峠の伝説 —</span></p>
+        <h1 id="hero-title">重返山道，<br>从中文开始<span class="accent">。</span></h1>
+        <p class="intro-copy">选择日版原版 ISO，在手机或电脑浏览器中<br class="desktop-break">制作属于你的汉化优化版。</p>
+        <div class="release-stamp"><strong>1.4.1</strong><span>抓地平衡调整<br><time datetime="2026-10-22">2026.10.22</time></span></div>
+        <div class="road-art" aria-hidden="true"><svg viewBox="0 0 500 130"><path class="terrain" d="M0 110 45 60 94 85 153 20 216 58 274 8 341 63 385 42 445 78 500 34M0 127 45 80 95 104 157 43 216 80 274 32 338 86 385 65 445 101 500 57"/><path class="route" d="M-5 122H155c75 0 88-70 157-70h122c32 0 32 45 0 45H340"/><circle cx="340" cy="97" r="5"/></svg><span>THE NEXT CORNER IS YOURS.</span></div>
+        <p class="local-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 4 8 9 8 9s8-5 8-9V6Zm-4 9 3 3 5-6"/></svg>ISO 只在你的设备上处理，不会上传。</p>
+      </div>
+
+      <section class="patch-panel" id="patcher" aria-labelledby="panel-title">
+        <div class="panel-heading"><div><p class="label">BROWSER PATCHER</p><h2 id="panel-title">制作汉化优化版</h2></div><span class="region">日版 / JPN</span></div>
+        <ol class="steps" aria-label="处理步骤"><li class="current" id="step-1"><span>01</span>选择镜像</li><li id="step-2"><span>02</span>本地处理</li><li id="step-3"><span>03</span>保存完成</li></ol>
+        <div id="capability" class="capability" role="status">正在检查浏览器的文件保存能力…</div>
+        <div class="drop-zone" id="drop-zone">
+          <svg class="file-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M13 5h15l9 9v29H13Z M28 5v10h9 M19 26h12 M19 32h8"/></svg>
+          <p class="drop-title" id="file-title">放入你的日版原版 ISO</p>
+          <p class="muted" id="file-detail">SLPM-66022 · 约 4.62 GB · 未修改的原版</p>
+          <label class="select-button" for="iso-file" id="select-label">选择 ISO 文件 <span aria-hidden="true">＋</span></label>
+          <input id="iso-file" class="file-input" type="file" accept=".iso,application/octet-stream,application/x-iso9660-image">
+          <p class="drop-foot">电脑也可以拖放文件到这里</p>
+        </div>
+        <div class="output-info"><span>输出版本<strong>汉化优化版 1.4.1</strong></span><span>输出大小<strong>4.64 GB</strong></span></div>
+        <p class="save-note" id="save-note">请保持页面在前台，避免锁屏或切换应用。</p>
+        <div class="progress-box" id="progress-box" hidden>
+          <div class="progress-heading"><strong id="phase-title">准备开始</strong><span id="percent">0%</span></div>
+          <progress id="progress" value="0" max="100" aria-label="补丁处理进度"></progress>
+          <p id="progress-detail" class="muted"></p><p id="elapsed" class="elapsed"></p>
+        </div>
+        <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+        <button class="start-button" id="start" disabled>制作汉化优化版 <span aria-hidden="true">↗</span></button>
+        <button class="text-button" id="cancel" hidden>取消处理</button>
+        <div id="download-actions" hidden><a class="start-button" id="download" download>保存已校验的 ISO <span aria-hidden="true">↓</span></a><p class="save-note">等待下载完成，并检查文件大小约 4.64 GB，再清理临时文件。请先关闭其他补丁页面。</p><button class="secondary-button" id="cleanup">我已保存完成，清理临时文件</button></div>
+        <button class="text-button" id="stale-cleanup" hidden>清理上次未完成任务的临时文件</button>
+        <p class="panel-foot">原版 SHA-256 与输出校验会自动完成。</p>
+        <noscript><p class="feedback error">请开启 JavaScript 后使用本地补丁功能。</p></noscript>
+      </section>
+    </section>
+
+    <section class="release-section wrap" id="release" aria-labelledby="release-title">
+      <div class="section-heading"><div><p class="eyebrow">WHAT'S IN THE PATCH</p><h2 id="release-title">熟悉的山道，更顺手的旅程。</h2></div><a href="assets/kaido-1.4.1.kpatch" download>下载补丁文件 <span aria-hidden="true">↓</span></a></div>
+      <div class="features"><article><span class="feature-number">01 / LANGUAGE</span><h3>读懂每一段旅程</h3><p>菜单、改装与赛事等内容的简体中文汉化。全部预录影片保留原文原画。</p></article><article><span class="feature-number">02 / HANDLING</span><h3>回到驾驶的节奏</h3><p>1.4.1 收回过强的额外抓地与侧向响应，放宽自然侧倾，保留轮胎等级差异。</p></article><article><span class="feature-number">03 / EXPERIENCE</span><h3>让热爱继续延伸</h3><p>继承改装扩展、镜头与 FOV、视觉震动、幽灵车选项，以及记录挑战拉花功能。</p></article></div>
+    </section>
+
+    <section class="help-section wrap" id="help" aria-labelledby="help-title"><div><p class="eyebrow">BEFORE YOU DRIVE</p><h2 id="help-title">出发前，先看这里。</h2><p class="muted">只需原版 ISO，无需安装旧补丁。<br>制作完成后，在模拟器中选择新的镜像。</p></div><div class="faq">
+      <details open><summary>手机上推荐怎么操作？</summary><p>推荐使用新版 Android Chrome 或支持直接保存文件的浏览器。选择 ISO 后点击制作，按提示选择一个新的输出文件名。处理时保持页面在前台。</p></details>
+      <details><summary>iPhone、Safari 或 Firefox 能用吗？</summary><p>页面会检测浏览器能力。不支持直接保存时会尝试浏览器临时存储，再由你下载导出。4.64 GB 文件能否成功导出受设备、配额和浏览器影响，不保证所有手机都能完成；遇到限制可换新版 Android Chrome，或在电脑制作后传入手机。</p></details>
+      <details><summary>需要预留多少空间？</summary><p>原版约 4.62 GB，输出约 4.64 GB。直接保存仍需要浏览器临时操作空间；临时存储后下载的方式建议在原版之外再预留至少 10 GB。网站配额估算不代表手机实际剩余空间。</p></details>
+      <details><summary>为什么我的 ISO 无法使用？</summary><p>只接受未修改的日版 SLPM-66022 ISO。其他地区、CHD、旧汉化版或已修改镜像均不能直接作为输入。网页会检查完整 SHA-256，单纯改文件名无效。</p></details>
+      <details><summary>输出后怎样继续原来的存档？</summary><p>完整重启模拟器，加载新 ISO，再从游戏内普通记忆卡存档继续。切换版本后请勿载入旧版即时存档。图形设置中的半像素偏移可设为模式 5，对齐原生并附加纹理偏移。</p></details>
+      <details><summary>输入和输出的校验值</summary><p>日版原版 · 4,621,631,488 字节</p><code>db026968bfc55da9730a1e179f89ecda75a23b12c040a6f6dc1375381b1e4115</code><p>汉化优化版 1.4.1 · 4,636,448,768 字节</p><code>2b9b47c2b97229b0556f7b0cac22c678d9aa3a5b48df452ef22102d0cf3ae8b9</code></details>
+    </div></section>
+  </main>
+  <footer class="wrap"><div class="footer-brand">KAIDO <span>峠の伝説</span></div><p>汉化・校对・贴图・优化信息版署名<br><strong>Hamagaki（瑶山枫叶）</strong></p><p>免费汉化优化计划 · 本站不提供游戏 ISO<br><a href="https://github.com/genkiproject/kaido-touge-no-densetsu-cn/issues" target="_blank" rel="noopener noreferrer">问题反馈 ↗</a> <a href="docs/MOBILE_COMPATIBILITY.md">浏览器兼容说明 ↗</a></p></footer>
+</body>
+</html>

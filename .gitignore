@@ -1,0 +1,9 @@
+node_modules/
+test-results/
+playwright-report/
+*.iso
+*.p2s
+*.ps2
+*.partial
+.env*
+!LICENSE
