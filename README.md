@@ -1,0 +1,1 @@
+# kaido-touge-no-densetsu-cn
