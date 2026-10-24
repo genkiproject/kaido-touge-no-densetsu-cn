@@ -6,14 +6,15 @@ function readPending(){try{for(let i=0;i<localStorage.length;i++){const k=localS
 pendingName=readPending();
 const direct=typeof window.showSaveFilePicker==='function';
 const supported=isSecureContext&&typeof Worker==='function'&&typeof DecompressionStream==='function'&&typeof BigInt==='function'&&(direct||typeof navigator.storage?.getDirectory==='function');
-const bytes=n=>`${(n/1e9).toFixed(2)} GB`;
+// Match Windows file-size display: binary units, truncated to two decimals.
+const bytes=n=>`${(Math.floor(n/1024**3*100)/100).toFixed(2)} GB`;
 function feedback(message,error=false){$('feedback').textContent=message;$('feedback').className=`feedback ${error?'error':'success'}`;}
 function pending(name){const prior=pendingName;try{if(name)localStorage.setItem(KEY+':'+name,'1');else{if(prior)localStorage.removeItem(KEY+':'+prior);if(localStorage.getItem(KEY)===prior)localStorage.removeItem(KEY);}}catch{}pendingName=name||readPending();update();}
 function update(){start.disabled=!supported||!input||busy||waitingSave||!!pendingName;fileInput.disabled=busy||waitingSave;$('select-label').style.pointerEvents=fileInput.disabled?'none':'';$('cancel').hidden=!busy;$('stale-cleanup').hidden=!pendingName||busy||waitingSave;}
 function step(n,done=false){for(let i=1;i<=3;i++)$(`step-${i}`).className=i<n||(done&&i===n)?'done':i===n?'current':'';}
 function select(file){
  if(busy||waitingSave)return;input=null;$('drop-zone').className='drop-zone';$('file-title').textContent=file?.name||'放入你的日版原版 ISO';
- if(!file){$('file-detail').textContent='SLPM-66022 · 约 4.62 GB · 未修改的原版';update();return;}
+ if(!file){$('file-detail').textContent='SLPM-66022 · 约 4.30 GB · 未修改的原版';update();return;}
  if(!/\.iso$/i.test(file.name)||file.size!==RELEASE.inputSize){$('drop-zone').classList.add('invalid');$('file-detail').textContent=`已选择 ${bytes(file.size)}`;feedback('文件不是支持的日版原版 ISO。需要 4,621,631,488 字节的 .iso 文件，不能使用 CHD 或旧汉化版。',true);update();return;}
  input=file;$('drop-zone').classList.add('selected');$('file-detail').textContent=`${bytes(file.size)} · 制作前会校验完整 SHA-256`;feedback('镜像已选择。准备好空间后即可开始制作。');step(1);update();
 }

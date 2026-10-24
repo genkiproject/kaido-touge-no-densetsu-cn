@@ -12,7 +12,7 @@
 4. 等待完整输出校验通过；临时存储模式中，请确认下载完成后再清理临时文件。
 5. 完整重启模拟器，加载新 ISO，通过游戏内普通记忆卡存档继续，不载入旧版即时存档。
 
-推荐新版 Android Chrome 或桌面 Chrome / Edge；页面按实际API能力检测。Safari、Firefox等环境使用临时存储模式时，4.64 GB文件导出受设备、配额和浏览器限制，**不保证所有手机可用**。建议在原版之外预留至少10 GB，保持页面在前台。[兼容性与依据](docs/MOBILE_COMPATIBILITY.md)。
+推荐新版 Android Chrome 或桌面 Chrome / Edge；页面按实际API能力检测。Safari、Firefox等环境使用临时存储模式时，4.31 GB文件导出受设备、配额和浏览器限制，**不保证所有手机可用**。建议在原版之外预留至少10 GB，保持页面在前台。[兼容性与依据](docs/MOBILE_COMPATIBILITY.md)。
 
 ## 版本内容
 
@@ -49,7 +49,7 @@ $env:KAIDO_TEST_ORIGINAL_ISO = 'D:/PCSX2/GAMES/Kaidou - Touge no Densetsu (Japan
 node --test tests/engine.test.mjs
 ```
 
-本机真实原版全量生成流SHA已与正式1.4.1一致；移动尺寸布局及Worker测试不等于Android／iOS实机4.64 GB导出已验证。
+本机真实原版全量生成流SHA已与正式1.4.1一致；移动尺寸布局及Worker测试不等于Android／iOS实机4.31 GB导出已验证。
 
 ## 许可及反馈
 

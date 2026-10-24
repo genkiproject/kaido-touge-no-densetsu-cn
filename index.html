@@ -32,12 +32,12 @@
         <div class="drop-zone" id="drop-zone">
           <svg class="file-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M13 5h15l9 9v29H13Z M28 5v10h9 M19 26h12 M19 32h8"/></svg>
           <p class="drop-title" id="file-title">放入你的日版原版 ISO</p>
-          <p class="muted" id="file-detail">SLPM-66022 · 约 4.62 GB · 未修改的原版</p>
+          <p class="muted" id="file-detail">SLPM-66022 · 约 4.30 GB · 未修改的原版</p>
           <label class="select-button" for="iso-file" id="select-label">选择 ISO 文件 <span aria-hidden="true">＋</span></label>
           <input id="iso-file" class="file-input" type="file" accept=".iso,application/octet-stream,application/x-iso9660-image">
           <p class="drop-foot">电脑也可以拖放文件到这里</p>
         </div>
-        <div class="output-info"><span>输出版本<strong>汉化优化版 1.4.1</strong></span><span>输出大小<strong>4.64 GB</strong></span></div>
+        <div class="output-info"><span>输出版本<strong>汉化优化版 1.4.1</strong></span><span>输出大小<strong>4.31 GB</strong></span></div>
         <p class="save-note" id="save-note">请保持页面在前台，避免锁屏或切换应用。</p>
         <div class="progress-box" id="progress-box" hidden>
           <div class="progress-heading"><strong id="phase-title">准备开始</strong><span id="percent">0%</span></div>
@@ -47,7 +47,7 @@
         <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
         <button class="start-button" id="start" disabled>制作汉化优化版 <span aria-hidden="true">↗</span></button>
         <button class="text-button" id="cancel" hidden>取消处理</button>
-        <div id="download-actions" hidden><a class="start-button" id="download" download>保存已校验的 ISO <span aria-hidden="true">↓</span></a><p class="save-note">等待下载完成，并检查文件大小约 4.64 GB，再清理临时文件。请先关闭其他补丁页面。</p><button class="secondary-button" id="cleanup">我已保存完成，清理临时文件</button></div>
+        <div id="download-actions" hidden><a class="start-button" id="download" download>保存已校验的 ISO <span aria-hidden="true">↓</span></a><p class="save-note">等待下载完成，并检查文件大小约 4.31 GB，再清理临时文件。请先关闭其他补丁页面。</p><button class="secondary-button" id="cleanup">我已保存完成，清理临时文件</button></div>
         <button class="text-button" id="stale-cleanup" hidden>清理上次未完成任务的临时文件</button>
         <p class="panel-foot">原版 SHA-256 与输出校验会自动完成。</p>
         <noscript><p class="feedback error">请开启 JavaScript 后使用本地补丁功能。</p></noscript>
@@ -61,8 +61,8 @@
 
     <section class="help-section wrap" id="help" aria-labelledby="help-title"><div><p class="eyebrow">BEFORE YOU DRIVE</p><h2 id="help-title">出发前，先看这里。</h2><p class="muted">只需原版 ISO，无需安装旧补丁。<br>制作完成后，在模拟器中选择新的镜像。</p></div><div class="faq">
       <details open><summary>手机上推荐怎么操作？</summary><p>推荐使用新版 Android Chrome 或支持直接保存文件的浏览器。选择 ISO 后点击制作，按提示选择一个新的输出文件名。处理时保持页面在前台。</p></details>
-      <details><summary>iPhone、Safari 或 Firefox 能用吗？</summary><p>页面会检测浏览器能力。不支持直接保存时会尝试浏览器临时存储，再由你下载导出。4.64 GB 文件能否成功导出受设备、配额和浏览器影响，不保证所有手机都能完成；遇到限制可换新版 Android Chrome，或在电脑制作后传入手机。</p></details>
-      <details><summary>需要预留多少空间？</summary><p>原版约 4.62 GB，输出约 4.64 GB。直接保存仍需要浏览器临时操作空间；临时存储后下载的方式建议在原版之外再预留至少 10 GB。网站配额估算不代表手机实际剩余空间。</p></details>
+      <details><summary>iPhone、Safari 或 Firefox 能用吗？</summary><p>页面会检测浏览器能力。不支持直接保存时会尝试浏览器临时存储，再由你下载导出。4.31 GB 文件能否成功导出受设备、配额和浏览器影响，不保证所有手机都能完成；遇到限制可换新版 Android Chrome，或在电脑制作后传入手机。</p></details>
+      <details><summary>需要预留多少空间？</summary><p>原版约 4.30 GB，输出约 4.31 GB。直接保存仍需要浏览器临时操作空间；临时存储后下载的方式建议在原版之外再预留至少 12 GB。网站配额估算不代表手机实际剩余空间。</p></details>
       <details><summary>为什么我的 ISO 无法使用？</summary><p>只接受未修改的日版 SLPM-66022 ISO。其他地区、CHD、旧汉化版或已修改镜像均不能直接作为输入。网页会检查完整 SHA-256，单纯改文件名无效。</p></details>
       <details><summary>输出后怎样继续原来的存档？</summary><p>完整重启模拟器，加载新 ISO，再从游戏内普通记忆卡存档继续。切换版本后请勿载入旧版即时存档。图形设置中的半像素偏移可设为模式 5，对齐原生并附加纹理偏移。</p></details>
       <details><summary>输入和输出的校验值</summary><p>日版原版 · 4,621,631,488 字节</p><code>db026968bfc55da9730a1e179f89ecda75a23b12c040a6f6dc1375381b1e4115</code><p>汉化优化版 1.4.1 · 4,636,448,768 字节</p><code>2b9b47c2b97229b0556f7b0cac22c678d9aa3a5b48df452ef22102d0cf3ae8b9</code></details>

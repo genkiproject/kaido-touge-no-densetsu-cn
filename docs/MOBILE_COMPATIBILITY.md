@@ -8,7 +8,7 @@
 | --- | --- | --- | --- |
 | Android Chrome 132 及以上 | MDN 兼容数据已列出支持 | 运行时检测 `showSaveFilePicker` | 优先使用此类浏览器并保存到手机本地存储 |
 | 桌面 Chrome / Edge | Chromium 支持保存文件选择器 | 直接逐块写出文件 | 手机遇到存储或导出问题时，可在电脑处理后复制 ISO |
-| Safari / iPhone / iPad | 当前 MDN 数据未列出支持 | 需要浏览器私有存储与下载导出 | 不承诺所有设备均能导出 4.64 GB 文件 |
+| Safari / iPhone / iPad | 当前 MDN 数据未列出支持 | 需要浏览器私有存储与下载导出 | 不承诺所有设备均能导出 4.31 GB 文件 |
 | Firefox 与不支持选择器的浏览器 | 当前 MDN 数据未列出支持 | 需要浏览器私有存储与下载导出 | 能否运行取决于页面能力检测及设备空间 |
 
 具体设备以页面的功能检测结果为准，不能只通过浏览器名称判断。Chrome Android 从 132 开始支持保存文件选择器，旧版兼容文章中“Android 不支持”的结论已经过时。依据：[MDN 官方兼容数据](https://github.com/mdn/browser-compat-data/blob/main/api/Window.json)、[Chrome 开发文档](https://developer.chrome.com/docs/capabilities/web-apis/file-system-access)。
@@ -31,7 +31,7 @@
 
 ## 空间与后台运行
 
-- 原版 ISO 约 4.62 GB，输出约 4.64 GB；GB 使用十进制计量。原版文件必须保留。
+- 原版 ISO 约 4.30 GB，输出约 4.31 GB；GB 沿用 Windows 的文件大小显示口径，按 1024³ 字节换算并截取两位小数（严格单位为 GiB）。原版文件必须保留。
 - 直接保存需要输出文件及浏览器临时操作的空间。使用 OPFS 后再下载时，建议在原版之外预留至少 10 GB；这是预留建议，不是可用性保证。
 - `navigator.storage.estimate()` 提供的是网站配额和用量估算，不能当作手机“真实剩余磁盘空间”。配额看似充足时仍可能写入失败；页面需要处理空间不足错误。
 - 私有存储默认可能被浏览器回收；申请持久化也可能不获准。无痕模式的配额、持久性与功能可能不同。
